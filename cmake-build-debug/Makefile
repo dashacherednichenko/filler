@@ -204,6 +204,33 @@ ft_init_players.c.s:
 	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_init_players.c.s
 .PHONY : ft_init_players.c.s
 
+ft_nbr_modul.o: ft_nbr_modul.c.o
+
+.PHONY : ft_nbr_modul.o
+
+# target to build an object file
+ft_nbr_modul.c.o:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_nbr_modul.c.o
+.PHONY : ft_nbr_modul.c.o
+
+ft_nbr_modul.i: ft_nbr_modul.c.i
+
+.PHONY : ft_nbr_modul.i
+
+# target to preprocess a source file
+ft_nbr_modul.c.i:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_nbr_modul.c.i
+.PHONY : ft_nbr_modul.c.i
+
+ft_nbr_modul.s: ft_nbr_modul.c.s
+
+.PHONY : ft_nbr_modul.s
+
+# target to generate assembly for a file
+ft_nbr_modul.c.s:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_nbr_modul.c.s
+.PHONY : ft_nbr_modul.c.s
+
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -2544,6 +2571,9 @@ help:
 	@echo "... ft_init_players.o"
 	@echo "... ft_init_players.i"
 	@echo "... ft_init_players.s"
+	@echo "... ft_nbr_modul.o"
+	@echo "... ft_nbr_modul.i"
+	@echo "... ft_nbr_modul.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

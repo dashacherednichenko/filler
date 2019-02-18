@@ -32,5 +32,6 @@ int 				ft_init_players(t_fill *f, char *line);
 int					ft_first_initmap(int fd, int x, t_fill *f, char *line);
 int					ft_initmap(int fd, t_fill *f);
 int 				ft_calc_distance(int fd, int x, int y, t_fill *f);
+int 				ft_nbr_modul(int x, int y);
 
 #endif

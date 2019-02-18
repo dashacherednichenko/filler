@@ -13,15 +13,6 @@
 #include "./libft/libft.h"
 #include "libfiller.h"
 
-int 				ft_nbr_modul(int x, int y)
-{
-	int nb;
-
-	nb = x - y;
-	nb < 0 ? nb = -nb : 0;
-	return (nb);
-}
-
 int ft_printmap(int fd, t_fill *f)
 {
 	int x;
@@ -33,7 +24,7 @@ int ft_printmap(int fd, t_fill *f)
 		y = 0;
 		while (y < f->y)
 		{
-			ft_fdprintf(fd, "%d ", f->map[x][y]);
+			ft_fdprintf(fd, "%3d ", f->map[x][y]);
 			y++;
 		}
 		ft_fdprintf(fd, "\n");
@@ -124,7 +115,6 @@ int					ft_createmap(t_fill *f, char *line)
 {
 	int i;
 	int x;
-//	int y;
 
 	x = 0;
 	i = 8;
@@ -138,16 +128,5 @@ int					ft_createmap(t_fill *f, char *line)
 		f->map[x] = (int*)malloc(sizeof(int) * f->y);
 		x++;
 	}
-//	x = 0;
-//	while (x < f->x)
-//	{
-//		y = 0;
-//		while (y < f->y)
-//		{
-//			if (f->map[x][y])
-//			y++;
-//		}
-//		x++;
-//	}
 	return (0);
 }
