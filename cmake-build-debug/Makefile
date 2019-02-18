@@ -150,6 +150,60 @@ filler.c.s:
 	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/filler.c.s
 .PHONY : filler.c.s
 
+ft_createmap.o: ft_createmap.c.o
+
+.PHONY : ft_createmap.o
+
+# target to build an object file
+ft_createmap.c.o:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_createmap.c.o
+.PHONY : ft_createmap.c.o
+
+ft_createmap.i: ft_createmap.c.i
+
+.PHONY : ft_createmap.i
+
+# target to preprocess a source file
+ft_createmap.c.i:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_createmap.c.i
+.PHONY : ft_createmap.c.i
+
+ft_createmap.s: ft_createmap.c.s
+
+.PHONY : ft_createmap.s
+
+# target to generate assembly for a file
+ft_createmap.c.s:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_createmap.c.s
+.PHONY : ft_createmap.c.s
+
+ft_init_players.o: ft_init_players.c.o
+
+.PHONY : ft_init_players.o
+
+# target to build an object file
+ft_init_players.c.o:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_init_players.c.o
+.PHONY : ft_init_players.c.o
+
+ft_init_players.i: ft_init_players.c.i
+
+.PHONY : ft_init_players.i
+
+# target to preprocess a source file
+ft_init_players.c.i:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_init_players.c.i
+.PHONY : ft_init_players.c.i
+
+ft_init_players.s: ft_init_players.c.s
+
+.PHONY : ft_init_players.s
+
+# target to generate assembly for a file
+ft_init_players.c.s:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_init_players.c.s
+.PHONY : ft_init_players.c.s
+
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -2484,6 +2538,12 @@ help:
 	@echo "... filler.o"
 	@echo "... filler.i"
 	@echo "... filler.s"
+	@echo "... ft_createmap.o"
+	@echo "... ft_createmap.i"
+	@echo "... ft_createmap.s"
+	@echo "... ft_init_players.o"
+	@echo "... ft_init_players.i"
+	@echo "... ft_init_players.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

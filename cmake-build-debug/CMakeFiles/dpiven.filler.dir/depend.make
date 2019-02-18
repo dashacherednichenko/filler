@@ -5,6 +5,14 @@ CMakeFiles/dpiven.filler.dir/filler.c.o: .././libft/libft.h
 CMakeFiles/dpiven.filler.dir/filler.c.o: ../filler.c
 CMakeFiles/dpiven.filler.dir/filler.c.o: ../libfiller.h
 
+CMakeFiles/dpiven.filler.dir/ft_createmap.c.o: .././libft/libft.h
+CMakeFiles/dpiven.filler.dir/ft_createmap.c.o: ../ft_createmap.c
+CMakeFiles/dpiven.filler.dir/ft_createmap.c.o: ../libfiller.h
+
+CMakeFiles/dpiven.filler.dir/ft_init_players.c.o: .././libft/libft.h
+CMakeFiles/dpiven.filler.dir/ft_init_players.c.o: ../ft_init_players.c
+CMakeFiles/dpiven.filler.dir/ft_init_players.c.o: ../libfiller.h
+
 CMakeFiles/dpiven.filler.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
 CMakeFiles/dpiven.filler.dir/libft/ft_atoi.c.o: ../libft/libft.h
 

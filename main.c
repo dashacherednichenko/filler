@@ -17,35 +17,55 @@ int main(void)
 {
 	int		fd;
 	char	*line;
-	t_fill	*fill;
-	int 	i;
+	t_fill	*f;
+	int		x;
+	int		i;
 
-	fill = (t_fill*)malloc(sizeof(t_fill));
+	x = 0;
+	i = 0;
+	f = (t_fill*)malloc(sizeof(t_fill));
 	fd = open("test", O_RDWR| O_TRUNC);
-	if (get_next_line(0, &line) >= 0 && ft_strncmp("$$$ exec p", line, 10) == 0)
+	if (get_next_line(0, &line) >= 0 && !ft_strncmp("$$$ exec p", line, 10))
+		ft_init_players(f, line);
+	if (get_next_line(0, &line) >= 0 && !ft_strncmp("Plateau ", line, 8))
+		ft_createmap(f, line);
+	if (get_next_line(0, &line) >= 0)
 	{
-		fill->player = line[10] == '1' ? 1 : 2;
-		fill->pl = line[10] == '1' ? 'O' : 'X';
-		fill->en = line[10] == '1' ? 'X' : 'O';
-		fill->enemy = line[10] == '1' ? 2 : 1;
-//		ft_fdprintf(fd, "PLAY %d %c\n", fill->player, fill->pl);
-//		ft_fdprintf(fd, "ENEM %d %c\n", fill->enemy, fill->en);
-	}
-	if (get_next_line(0, &line) >= 0 && ft_strncmp("Plateau ", line, 8) == 0)
-	{
-		i = 8;
-		fill->x = ft_atoi(&line[i]);
-		while (line[i] >= '0' && line[i] <= '9')
-			i++;
-		fill->y = ft_atoi(&line[i]);
-//		ft_fdprintf(fd, "X %d\n", fill->x);
-//		ft_fdprintf(fd, "Y %d\n", fill->y);
-	}
-	while (get_next_line(0, &line) >= 0)
-	{
-		ft_fdprintf(fd, "%s\n", line);
-	}
+		while (get_next_line(0, &line) >= 0)
+		{
+			if (!ft_strncmp("Plateau ", line, 8))
+			{
+				get_next_line(0, &line);
+				get_next_line(0, &line);
+			}
+			if (x < f->x && i == 0)
+			{
+				ft_first_initmap(fd, x, f, line);
+//				ft_fdprintf(fd, "%s\n", line);
+				x++;
+			}
+			else if (!ft_strncmp("Piece ", line, 6))
+			{
+				ft_initmap(fd, f);
+				i = 6;
+				f->p_x = ft_atoi(&line[i]);
+				while (line[i] >= '0' && line[i] <= '9')
+					i++;
+				f->p_y = ft_atoi(&line[i]);
+//				ft_fdprintf(fd, "X%d\n", f->p_x);
+//				ft_fdprintf(fd, "Y%d\n", f->p_y);
+				i = 0;
+				while (i < f->p_x)
+				{
+					(get_next_line(0, &line));
+					i++;
+				}
+//				ft_printf("12 13\n");
+				i++;
+			}
 
+		}
+	}
 //	system("leaks dpiven.filler");
 	return 0;
 }

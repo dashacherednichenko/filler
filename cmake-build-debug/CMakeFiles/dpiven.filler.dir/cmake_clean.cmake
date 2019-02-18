@@ -86,6 +86,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/dpiven.filler.dir/libft/get_next_line.c.o"
   "CMakeFiles/dpiven.filler.dir/main.c.o"
   "CMakeFiles/dpiven.filler.dir/filler.c.o"
+  "CMakeFiles/dpiven.filler.dir/ft_createmap.c.o"
+  "CMakeFiles/dpiven.filler.dir/ft_init_players.c.o"
   "dpiven.filler.pdb"
   "dpiven.filler"
 )

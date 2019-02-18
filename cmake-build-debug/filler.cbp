@@ -83,6 +83,12 @@
 		<Unit filename="/Users/dpiven/CLionProjects/filler/filler.c">
 			<Option target="dpiven.filler"/>
 		</Unit>
+		<Unit filename="/Users/dpiven/CLionProjects/filler/ft_createmap.c">
+			<Option target="dpiven.filler"/>
+		</Unit>
+		<Unit filename="/Users/dpiven/CLionProjects/filler/ft_init_players.c">
+			<Option target="dpiven.filler"/>
+		</Unit>
 		<Unit filename="/Users/dpiven/CLionProjects/filler/libfiller.h">
 			<Option target="dpiven.filler"/>
 		</Unit>
