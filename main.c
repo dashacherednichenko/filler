@@ -20,9 +20,11 @@ int main(void)
 	t_fill	*f;
 	int		x;
 	int		i;
+	int		ii;
 
 	x = 0;
 	i = 0;
+	ii = 0;
 	f = (t_fill*)malloc(sizeof(t_fill));
 	fd = open("test", O_RDWR| O_TRUNC);
 	if (get_next_line(0, &line) >= 0 && !ft_strncmp("$$$ exec p", line, 10))
@@ -38,29 +40,47 @@ int main(void)
 				get_next_line(0, &line);
 				get_next_line(0, &line);
 			}
-			if (x < f->x && i == 0)
+			if (x < f->x)
 			{
 				ft_first_initmap(fd, x, f, line);
 //				ft_fdprintf(fd, "%s\n", line);
 				x++;
 			}
+//			else if (x < f->x && i)
+//			{
+//				ft_second_initmap(fd, x, f, line);
+////				ft_fdprintf(fd, "%s\n", line);
+//				x++;
+//			}
 			else if (!ft_strncmp("Piece ", line, 6))
 			{
 				ft_initmap(fd, f);
-				i = 6;
-				f->p_x = ft_atoi(&line[i]);
-				while (line[i] >= '0' && line[i] <= '9')
-					i++;
-				f->p_y = ft_atoi(&line[i]);
-//				ft_fdprintf(fd, "X%d\n", f->p_x);
-//				ft_fdprintf(fd, "Y%d\n", f->p_y);
+				ft_createpiece(f, line);
+				ft_fdprintf(fd, "X%d\n", f->p_x);
+				ft_fdprintf(fd, "Y%d\n", f->p_y);
 				i = 0;
 				while (i < f->p_x)
 				{
 					(get_next_line(0, &line));
+					if (i > 0 && !ft_strchr(line, '*') && ii != 0)
+						f->p_x = i;
+					else if (!ft_strchr(line, '*') && ii == 0)
+					{
+						ft_init_piece(fd, i, f, line);
+//						ii++;
+					}
+					else if (ft_strchr(line, '*'))
+					{
+						ft_init_piece(fd, i, f, line);
+						ii++;
+					}
 					i++;
 				}
-//				ft_printf("12 13\n");
+				ft_cut_columns_piece(fd, f);
+				ft_printpiece(fd, f);
+				ft_fdprintf(fd, "X%d\n", f->p_x);
+				ft_fdprintf(fd, "Y%d\n", f->p_y);
+				ft_printf("12 13\n");
 				i++;
 			}
 
