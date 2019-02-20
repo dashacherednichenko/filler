@@ -13,6 +13,22 @@
 #include "./libft/libft.h"
 #include "libfiller.h"
 
+int ft_obnul_piece(t_fill *f)
+{
+	int x;
+
+	x = 0;
+	while (x < f->p_x)
+	{
+		free(f->piece[x]);
+		x++;
+	}
+	f->cand_x = 0;
+	f->cand_y = 0;
+	f->cand_dist = 0;
+	return (0);
+}
+
 int main(void)
 {
 	int		fd;
@@ -52,18 +68,23 @@ int main(void)
 ////				ft_fdprintf(fd, "%s\n", line);
 //				x++;
 //			}
-			else if (!ft_strncmp("Piece ", line, 6))
+			if (!ft_strncmp("Piece ", line, 6))
 			{
 				ft_initmap(fd, f);
 				ft_createpiece(f, line);
-				ft_fdprintf(fd, "X%d\n", f->p_x);
-				ft_fdprintf(fd, "Y%d\n", f->p_y);
+//				ft_fdprintf(fd, "X%d\n", f->p_x);
+//				ft_fdprintf(fd, "Y%d\n", f->p_y);
 				i = 0;
+				ii = 0;
 				while (i < f->p_x)
 				{
 					(get_next_line(0, &line));
 					if (i > 0 && !ft_strchr(line, '*') && ii != 0)
+					{
+//						while (i < f->p_x)
+//							free(f->piece[f->p_x--]);
 						f->p_x = i;
+					}
 					else if (!ft_strchr(line, '*') && ii == 0)
 					{
 						ft_init_piece(fd, i, f, line);
@@ -80,12 +101,19 @@ int main(void)
 				ft_printpiece(fd, f);
 				ft_fdprintf(fd, "X%d\n", f->p_x);
 				ft_fdprintf(fd, "Y%d\n", f->p_y);
-				ft_printf("12 13\n");
-				i++;
+//				ft_printf("12 13\n");
+				if (ft_place_piece(fd, f) == 0)
+				{
+					x = ft_obnul_piece(f);
+					break ;
+				}
+				x = ft_obnul_piece(f);
+//				i++;
 			}
 
 		}
 	}
+	ft_printmap(fd, f);
 //	system("leaks dpiven.filler");
 	return 0;
 }
