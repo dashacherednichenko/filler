@@ -13,7 +13,7 @@
 #include "./libft/libft.h"
 #include "libfiller.h"
 
-int 				ft_init_players(t_fill *f, char *line)
+int	ft_init_players(t_fill *f, char *line)
 {
 	f->player = line[10] == '1' ? 1 : 2;
 	f->pl = line[10] == '1' ? 'O' : 'X';

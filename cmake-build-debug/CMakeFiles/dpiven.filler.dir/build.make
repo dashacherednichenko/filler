@@ -1227,6 +1227,32 @@ CMakeFiles/dpiven.filler.dir/ft_nbr_modul.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpiven.filler.dir/ft_nbr_modul.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dpiven/CLionProjects/filler/ft_nbr_modul.c -o CMakeFiles/dpiven.filler.dir/ft_nbr_modul.c.s
 
+CMakeFiles/dpiven.filler.dir/ft_place_piece.c.o: CMakeFiles/dpiven.filler.dir/flags.make
+CMakeFiles/dpiven.filler.dir/ft_place_piece.c.o: ../ft_place_piece.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dpiven/CLionProjects/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/dpiven.filler.dir/ft_place_piece.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpiven.filler.dir/ft_place_piece.c.o   -c /Users/dpiven/CLionProjects/filler/ft_place_piece.c
+
+CMakeFiles/dpiven.filler.dir/ft_place_piece.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpiven.filler.dir/ft_place_piece.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dpiven/CLionProjects/filler/ft_place_piece.c > CMakeFiles/dpiven.filler.dir/ft_place_piece.c.i
+
+CMakeFiles/dpiven.filler.dir/ft_place_piece.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpiven.filler.dir/ft_place_piece.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dpiven/CLionProjects/filler/ft_place_piece.c -o CMakeFiles/dpiven.filler.dir/ft_place_piece.c.s
+
+CMakeFiles/dpiven.filler.dir/ft_print_filler.c.o: CMakeFiles/dpiven.filler.dir/flags.make
+CMakeFiles/dpiven.filler.dir/ft_print_filler.c.o: ../ft_print_filler.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dpiven/CLionProjects/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/dpiven.filler.dir/ft_print_filler.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dpiven.filler.dir/ft_print_filler.c.o   -c /Users/dpiven/CLionProjects/filler/ft_print_filler.c
+
+CMakeFiles/dpiven.filler.dir/ft_print_filler.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dpiven.filler.dir/ft_print_filler.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dpiven/CLionProjects/filler/ft_print_filler.c > CMakeFiles/dpiven.filler.dir/ft_print_filler.c.i
+
+CMakeFiles/dpiven.filler.dir/ft_print_filler.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dpiven.filler.dir/ft_print_filler.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dpiven/CLionProjects/filler/ft_print_filler.c -o CMakeFiles/dpiven.filler.dir/ft_print_filler.c.s
+
 # Object files for target dpiven.filler
 dpiven_filler_OBJECTS = \
 "CMakeFiles/dpiven.filler.dir/libft/ft_atoi.c.o" \
@@ -1318,7 +1344,9 @@ dpiven_filler_OBJECTS = \
 "CMakeFiles/dpiven.filler.dir/filler.c.o" \
 "CMakeFiles/dpiven.filler.dir/ft_createmap.c.o" \
 "CMakeFiles/dpiven.filler.dir/ft_init_players.c.o" \
-"CMakeFiles/dpiven.filler.dir/ft_nbr_modul.c.o"
+"CMakeFiles/dpiven.filler.dir/ft_nbr_modul.c.o" \
+"CMakeFiles/dpiven.filler.dir/ft_place_piece.c.o" \
+"CMakeFiles/dpiven.filler.dir/ft_print_filler.c.o"
 
 # External object files for target dpiven.filler
 dpiven_filler_EXTERNAL_OBJECTS =
@@ -1413,9 +1441,11 @@ dpiven.filler: CMakeFiles/dpiven.filler.dir/filler.c.o
 dpiven.filler: CMakeFiles/dpiven.filler.dir/ft_createmap.c.o
 dpiven.filler: CMakeFiles/dpiven.filler.dir/ft_init_players.c.o
 dpiven.filler: CMakeFiles/dpiven.filler.dir/ft_nbr_modul.c.o
+dpiven.filler: CMakeFiles/dpiven.filler.dir/ft_place_piece.c.o
+dpiven.filler: CMakeFiles/dpiven.filler.dir/ft_print_filler.c.o
 dpiven.filler: CMakeFiles/dpiven.filler.dir/build.make
 dpiven.filler: CMakeFiles/dpiven.filler.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dpiven/CLionProjects/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Linking C executable dpiven.filler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dpiven/CLionProjects/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Linking C executable dpiven.filler"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dpiven.filler.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

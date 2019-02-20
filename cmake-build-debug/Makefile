@@ -231,6 +231,60 @@ ft_nbr_modul.c.s:
 	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_nbr_modul.c.s
 .PHONY : ft_nbr_modul.c.s
 
+ft_place_piece.o: ft_place_piece.c.o
+
+.PHONY : ft_place_piece.o
+
+# target to build an object file
+ft_place_piece.c.o:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_place_piece.c.o
+.PHONY : ft_place_piece.c.o
+
+ft_place_piece.i: ft_place_piece.c.i
+
+.PHONY : ft_place_piece.i
+
+# target to preprocess a source file
+ft_place_piece.c.i:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_place_piece.c.i
+.PHONY : ft_place_piece.c.i
+
+ft_place_piece.s: ft_place_piece.c.s
+
+.PHONY : ft_place_piece.s
+
+# target to generate assembly for a file
+ft_place_piece.c.s:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_place_piece.c.s
+.PHONY : ft_place_piece.c.s
+
+ft_print_filler.o: ft_print_filler.c.o
+
+.PHONY : ft_print_filler.o
+
+# target to build an object file
+ft_print_filler.c.o:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_print_filler.c.o
+.PHONY : ft_print_filler.c.o
+
+ft_print_filler.i: ft_print_filler.c.i
+
+.PHONY : ft_print_filler.i
+
+# target to preprocess a source file
+ft_print_filler.c.i:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_print_filler.c.i
+.PHONY : ft_print_filler.c.i
+
+ft_print_filler.s: ft_print_filler.c.s
+
+.PHONY : ft_print_filler.s
+
+# target to generate assembly for a file
+ft_print_filler.c.s:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_print_filler.c.s
+.PHONY : ft_print_filler.c.s
+
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -2574,6 +2628,12 @@ help:
 	@echo "... ft_nbr_modul.o"
 	@echo "... ft_nbr_modul.i"
 	@echo "... ft_nbr_modul.s"
+	@echo "... ft_place_piece.o"
+	@echo "... ft_place_piece.i"
+	@echo "... ft_place_piece.s"
+	@echo "... ft_print_filler.o"
+	@echo "... ft_print_filler.i"
+	@echo "... ft_print_filler.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

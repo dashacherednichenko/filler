@@ -92,6 +92,12 @@
 		<Unit filename="/Users/dpiven/CLionProjects/filler/ft_nbr_modul.c">
 			<Option target="dpiven.filler"/>
 		</Unit>
+		<Unit filename="/Users/dpiven/CLionProjects/filler/ft_place_piece.c">
+			<Option target="dpiven.filler"/>
+		</Unit>
+		<Unit filename="/Users/dpiven/CLionProjects/filler/ft_print_filler.c">
+			<Option target="dpiven.filler"/>
+		</Unit>
 		<Unit filename="/Users/dpiven/CLionProjects/filler/libfiller.h">
 			<Option target="dpiven.filler"/>
 		</Unit>

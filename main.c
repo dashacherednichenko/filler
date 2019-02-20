@@ -37,10 +37,9 @@ int main(void)
 	int		x;
 	int		i;
 	int		ii;
+	int r;
 
 	x = 0;
-	i = 0;
-	ii = 0;
 	f = (t_fill*)malloc(sizeof(t_fill));
 	fd = open("test", O_RDWR| O_TRUNC);
 	if (get_next_line(0, &line) >= 0 && !ft_strncmp("$$$ exec p", line, 10))
@@ -62,12 +61,6 @@ int main(void)
 //				ft_fdprintf(fd, "%s\n", line);
 				x++;
 			}
-//			else if (x < f->x && i)
-//			{
-//				ft_second_initmap(fd, x, f, line);
-////				ft_fdprintf(fd, "%s\n", line);
-//				x++;
-//			}
 			if (!ft_strncmp("Piece ", line, 6))
 			{
 				ft_initmap(fd, f);
@@ -76,7 +69,8 @@ int main(void)
 //				ft_fdprintf(fd, "Y%d\n", f->p_y);
 				i = 0;
 				ii = 0;
-				while (i < f->p_x)
+				r = f->p_x;
+				while (i < r)
 				{
 					(get_next_line(0, &line));
 					if (i > 0 && !ft_strchr(line, '*') && ii != 0)
@@ -101,13 +95,15 @@ int main(void)
 				ft_printpiece(fd, f);
 				ft_fdprintf(fd, "X%d\n", f->p_x);
 				ft_fdprintf(fd, "Y%d\n", f->p_y);
-//				ft_printf("12 13\n");
 				if (ft_place_piece(fd, f) == 0)
 				{
-					x = ft_obnul_piece(f);
+					ft_printpiece(fd, f);
+					ft_obnul_piece(f);
+//					x = 0;
 					break ;
 				}
-				x = ft_obnul_piece(f);
+				ft_obnul_piece(f);
+				x = 0;
 //				i++;
 			}
 
