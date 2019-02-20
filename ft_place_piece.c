@@ -136,7 +136,9 @@ int	ft_place_piece(int fd, t_fill *f)
 {
 	int x;
 	int y;
+	int i;
 
+	i = 0;
 	x = 0;
 	f->cand_y = 0;
 	f->cand_x = 0;
@@ -147,15 +149,16 @@ int	ft_place_piece(int fd, t_fill *f)
 		while (y < f->y && (y + f->p_y) <= f->y)
 		{
 			if (ft_check_piece(x, y, f) == 1)
-			{
-				ft_printf("%d %d\n", f->cand_x, f->cand_y);
-				ft_printmap(fd, f);
-				ft_fdprintf(fd, "DDD %d\n", f->cand_dist);
-				return (1);
-			}
+				i++;
 			y++;
 		}
 		x++;
+	}
+	if (i > 0)
+	{
+		ft_printf("%d %d\n", f->cand_x, f->cand_y);
+		ft_printmap(fd, f);
+		return (1);
 	}
 	ft_printf("0 0\n");
 	return (0);
