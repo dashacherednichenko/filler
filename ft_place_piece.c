@@ -13,7 +13,7 @@
 #include "./libft/libft.h"
 #include "libfiller.h"
 
-int	ft_init_piece(int fd, int x, t_fill *f, char *line)
+int				ft_init_piece(int x, t_fill *f, char *line)
 {
 	int y;
 	int i;
@@ -32,56 +32,42 @@ int	ft_init_piece(int fd, int x, t_fill *f, char *line)
 	return (0);
 }
 
-int	ft_cut_columns_piece(int fd, t_fill *f)
+static int		ft_check_column(t_fill *f, int y)
 {
 	int x;
-	int y;
-	int i;
-	int xi;
 
 	x = 0;
-	i = 0;
 	while (x < f->p_x)
 	{
-		y = 0;
-		while (y < f->p_y)
-		{
-			if (f->piece[x][f->p_y - 1] == -20)
-				return (0);
-			if (f->piece[x][y] == -20)
-				i++;
-			else if (f->piece[x][y] == 0 && i != 0)
-			{
-				xi = x;
-				while (xi < f->p_x)
-				{
-					if (f->piece[xi][y] == -20)
-					{
-//						xi = x;
-						i++;
-						break ;
-					}
-					xi++;
-				}
-				if (y == f->p_y && i != 0)
-				{
-					f->p_y = y;
-					return (0);
-				}
-				if ((xi == f->p_x && i != 0))
-				{
-					f->p_y = y;
-					return (0);
-				}
-			}
-			y++;
-		}
+		if (f->piece[x][y] == -20)
+			return (0);
 		x++;
+	}
+	return (1);
+}
+
+int				ft_cut_columns_piece(t_fill *f)
+{
+	int y;
+	int i;
+
+	i = 0;
+	y = 0;
+	while (y < f->p_y)
+	{
+		if (ft_check_column(f, y) == 0)
+			i++;
+		else if (ft_check_column(f, y) == 0 && i != 0)
+		{
+			f->p_y = y;
+			return (0);
+		}
+		y++;
 	}
 	return (0);
 }
 
-int	ft_check_piece(int x, int y, t_fill *f)
+int				ft_check_piece(int x, int y, t_fill *f)
 {
 	int px;
 	int py;
@@ -103,8 +89,12 @@ int	ft_check_piece(int x, int y, t_fill *f)
 			if (f->piece[px][py] == -20)
 			{
 				if (f->map[ix][iy] == -20)
+				{
 					i++;
-				else if (f->map[ix][iy] == -10)
+					if (i > 1)
+						return (0);
+				}
+				else if (f->map[ix][iy] == -10 && f->piece[px][py] == -20)
 					return (0);
 				else if (f->map[ix][iy] != -10 && f->map[ix][iy] != -20)
 				{
@@ -132,7 +122,7 @@ int	ft_check_piece(int x, int y, t_fill *f)
 		return (0);
 }
 
-int	ft_place_piece(int fd, t_fill *f)
+int				ft_place_piece(t_fill *f)
 {
 	int x;
 	int y;
@@ -157,7 +147,6 @@ int	ft_place_piece(int fd, t_fill *f)
 	if (i > 0)
 	{
 		ft_printf("%d %d\n", f->cand_x, f->cand_y);
-		ft_printmap(fd, f);
 		ft_obnul_piece(f);
 		return (1);
 	}
@@ -166,7 +155,7 @@ int	ft_place_piece(int fd, t_fill *f)
 	return (0);
 }
 
-int	ft_createpiece(t_fill *f, char *line)
+int				ft_createpiece(t_fill *f, char *line)
 {
 	int i;
 	int x;

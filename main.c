@@ -52,14 +52,12 @@ int main(void)
 			}
 			if (x < f->x)
 			{
-				ft_first_initmap(fd, x, f, line);
+				ft_first_initmap(x++, f, line);
 				free(line);
-//				ft_fdprintf(fd, "%s\n", line);
-				x++;
 			}
 			if (!ft_strncmp("Piece ", line, 6))
 			{
-				ft_initmap(fd, f);
+				ft_initmap(f);
 				ft_createpiece(f, line);
 				i = 0;
 				ii = 0;
@@ -68,33 +66,32 @@ int main(void)
 				{
 					free(line);
 					get_next_line(0, &line);
-					if (i > 0 && !ft_strchr(line, '*') && ii != 0)
+					if (i > 0 && !ft_strchr(line, '*') && ii != 0 && t == 0)
+					{
 						f->p_x = i;
+						t++;
+//						ft_init_piece(fd, i, f, line);
+					}
 					else if (!ft_strchr(line, '*') && ii == 0)
-						ft_init_piece(fd, i, f, line);
+						ft_init_piece(i, f, line);
 					else if (ft_strchr(line, '*'))
 					{
-						ft_init_piece(fd, i, f, line);
+						ft_init_piece(i, f, line);
 						ii++;
 					}
 					i++;
 				}
 				free(line);
-				ft_cut_columns_piece(fd, f);
-				ft_printpiece(fd, f);
-				if (ft_place_piece(fd, f) == 0)
-				{
-
-					break ;
-				}
-//				ft_obnul_piece(f);
+				ft_cut_columns_piece(f);
+				if (ft_place_piece(f) == 0)
+					break;
 				x = 0;
+				t = 0;
 			}
 		}
 	}
-	ft_printmap(fd, f);
 	ft_free_map(f);
-	free (f);
+	free(f);
 	system("leaks -q dpiven.filler > leaks");
 	return (0);
 }

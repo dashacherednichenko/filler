@@ -20,8 +20,8 @@ all: $(NAME)
 
 $(NAME):
 	$(LIB)
-	@gcc -o $(NAME) $(SRC) ./libft/libft.a -I./ -I./libft/
-#	@gcc -Wall -Wextra -Werror -o $(NAME) $(SRC) ./libft/libft.a -I./ -I./libft/
+#	@gcc -o $(NAME) $(SRC) ./libft/libft.a -I./ -I./libft/
+	@gcc -Wall -Wextra -Werror -o $(NAME) $(SRC) ./libft/libft.a -I./ -I./libft/
 
 clean:
 	@$(LIB) clean

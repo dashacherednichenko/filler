@@ -13,7 +13,7 @@
 #include "./libft/libft.h"
 #include "libfiller.h"
 
-int	ft_first_initmap(int fd, int x, t_fill *f, char *line)
+int	ft_first_initmap(int x, t_fill *f, char *line)
 {
 	int y;
 	int i;
@@ -38,7 +38,7 @@ int	ft_first_initmap(int fd, int x, t_fill *f, char *line)
 	return (0);
 }
 
-int	ft_initmap(int fd, t_fill *f)
+int	ft_initmap(t_fill *f)
 {
 	int x;
 	int y;
@@ -50,9 +50,7 @@ int	ft_initmap(int fd, t_fill *f)
 		while (y < f->y)
 		{
 			if (f->map[x][y] == -10)
-			{
-				ft_calc_distance(fd, x, y, f);
-			}
+				ft_calc_distance(x, y, f);
 			y++;
 		}
 		x++;
@@ -60,7 +58,7 @@ int	ft_initmap(int fd, t_fill *f)
 	return (0);
 }
 
-int	ft_calc_distance(int fd, int zx, int zy, t_fill *f)
+int	ft_calc_distance(int zx, int zy, t_fill *f)
 {
 	int x;
 	int y;
