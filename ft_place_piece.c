@@ -50,13 +50,14 @@ static int		ft_check_column(t_fill *f, int y)
 	return (1);
 }
 
-int				ft_cut_columns_piece(t_fill *f)
+int				ft_cut_columns_piece(t_fill *f, char *line)
 {
 	int y;
 	int i;
 
 	i = 0;
 	y = 0;
+	free(line);
 	while (y < f->p_y)
 	{
 		if (ft_check_column(f, y) == 0)

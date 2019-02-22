@@ -31,13 +31,13 @@ typedef struct		s_fill
 	int				p_x_first;
 }					t_fill;
 
-int					ft_createmap(t_fill *f, char *line);
+int					ft_cr_mp(t_fill *f, char *line);
 int					next_createmap(t_fill *f);
-int					ft_init_players(t_fill *f, char *line);
+int					ft_in_pl(t_fill *f, char *line);
 int					ft_first_initmap(int x, t_fill *f, char *line);
 int					ft_createpiece(t_fill *f, char *line);
 int					ft_init_piece(int x, t_fill *f, char *line);
-int					ft_cut_columns_piece(t_fill *f);
+int					ft_cut_columns_piece(t_fill *f, char *line);
 int					ft_second_initmap(int fd, int x, t_fill *f, char *line);
 int					ft_initmap(t_fill *f);
 int					ft_calc_distance(int x, int y, t_fill *f);

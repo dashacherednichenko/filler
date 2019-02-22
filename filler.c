@@ -12,63 +12,58 @@
 
 #include "./libft/libft.h"
 #include "libfiller.h"
+#define PL "$$$ exec p"
+#define MP "Plateau "
 
-int	ft_filler(char *line, t_fill *f, int x, int i)
+int g_t;
+int g_r;
+int g_ii;
+
+int	ft_filler(char *l, t_fill *f, int x, int i)
 {
-	int		ii;
-	int		r;
-	int		t;
-
-	t = 0;
-	if (get_next_line(0, &line) >= 0 && !ft_strncmp("$$$ exec p", line, 10))
-		ft_init_players(f, line);
-	if (get_next_line(0, &line) >= 0 && !ft_strncmp("Plateau ", line, 8))
-		ft_createmap(f, line);
-	if (get_next_line(0, &line) >= 0)
+	g_t = 0;
+	get_next_line(0, &l) >= 0 && !ft_strncmp(PL, l, 10) ? ft_in_pl(f, l) : 0;
+	get_next_line(0, &l) >= 0 && !ft_strncmp(MP, l, 8) ? ft_cr_mp(f, l) : 0;
+	if (get_next_line(0, &l) >= 0)
 	{
-		free(line);
-		while (get_next_line(0, &line) >= 0)
+		free(l);
+		while (get_next_line(0, &l) >= 0)
 		{
-			if (!ft_strncmp("Plateau ", line, 8))
+			if (!ft_strncmp(MP, l, 8))
 			{
-				free(line);
-				get_next_line(0, &line);
-				free(line);
-				get_next_line(0, &line);
+				free(l);
+				get_next_line(0, &l);
+				free(l);
+				get_next_line(0, &l);
 			}
-			if (x < f->x)
-				ft_first_initmap(x++, f, line);
-			if (!ft_strncmp("Piece ", line, 6))
+			x < f->x ? ft_first_initmap(x++, f, l) : 0;
+			if (!ft_strncmp("Piece ", l, 6))
 			{
-				ft_initmap(f);
-				ft_createpiece(f, line);
-				i = 0;
-				ii = 0;
-				r = f->p_x;
-				while (i < r)
+				i = ft_initmap(f);
+				g_ii = ft_createpiece(f, l);
+				g_r = f->p_x;
+				while (i < g_r)
 				{
-					free(line);
-					get_next_line(0, &line);
-					if (i > 0 && !ft_strchr(line, '*') && ii != 0 && t == 0)
+					free(l);
+					get_next_line(0, &l);
+					if (i > 0 && !ft_strchr(l, '*') && g_ii != 0 && g_t == 0)
 					{
 						f->p_x = i;
-						t++;
+						g_t++;
 					}
-					else if (!ft_strchr(line, '*') && ii == 0)
-						ft_init_piece(i, f, line);
-					else if (ft_strchr(line, '*'))
+					else if (!ft_strchr(l, '*') && g_ii == 0)
+						ft_init_piece(i, f, l);
+					else if (ft_strchr(l, '*'))
 					{
-						ft_init_piece(i, f, line);
-						ii++;
+						ft_init_piece(i, f, l);
+						g_ii++;
 					}
 					i++;
 				}
-				free(line);
-				ft_cut_columns_piece(f);
+				x = ft_cut_columns_piece(f, l);
 				if (ft_place_piece(f, 0, 0) == 0)
 					break ;
-				x = 0;
-				t = 0;
+				g_t = 0;
 			}
 		}
 	}

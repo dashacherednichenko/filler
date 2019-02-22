@@ -13,7 +13,7 @@
 #include "./libft/libft.h"
 #include "libfiller.h"
 
-int	ft_createmap(t_fill *f, char *line)
+int	ft_cr_mp(t_fill *f, char *line)
 {
 	int i;
 	int x;
