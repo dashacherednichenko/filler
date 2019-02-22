@@ -45,5 +45,7 @@ int					ft_nbr_modul(int x, int y);
 int					ft_place_piece(int fd, t_fill *f);
 int					ft_printpiece(int fd, t_fill *f);
 int					ft_printmap(int fd, t_fill *f);
+void				ft_free_map(t_fill *f);
+int					ft_obnul_piece(t_fill *f);
 
 #endif

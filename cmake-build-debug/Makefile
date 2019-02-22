@@ -177,6 +177,33 @@ ft_createmap.c.s:
 	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_createmap.c.s
 .PHONY : ft_createmap.c.s
 
+ft_free.o: ft_free.c.o
+
+.PHONY : ft_free.o
+
+# target to build an object file
+ft_free.c.o:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_free.c.o
+.PHONY : ft_free.c.o
+
+ft_free.i: ft_free.c.i
+
+.PHONY : ft_free.i
+
+# target to preprocess a source file
+ft_free.c.i:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_free.c.i
+.PHONY : ft_free.c.i
+
+ft_free.s: ft_free.c.s
+
+.PHONY : ft_free.s
+
+# target to generate assembly for a file
+ft_free.c.s:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_free.c.s
+.PHONY : ft_free.c.s
+
 ft_init_players.o: ft_init_players.c.o
 
 .PHONY : ft_init_players.o
@@ -2622,6 +2649,9 @@ help:
 	@echo "... ft_createmap.o"
 	@echo "... ft_createmap.i"
 	@echo "... ft_createmap.s"
+	@echo "... ft_free.o"
+	@echo "... ft_free.i"
+	@echo "... ft_free.s"
 	@echo "... ft_init_players.o"
 	@echo "... ft_init_players.i"
 	@echo "... ft_init_players.s"

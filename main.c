@@ -13,22 +13,6 @@
 #include "./libft/libft.h"
 #include "libfiller.h"
 
-int ft_obnul_piece(t_fill *f)
-{
-	int x;
-
-	x = 0;
-	while (x < f->p_x)
-	{
-		free(f->piece[x]);
-		x++;
-	}
-	f->cand_x = 0;
-	f->cand_y = 0;
-	f->cand_dist = 0;
-	return (0);
-}
-
 int main(void)
 {
 	int		fd;
@@ -43,24 +27,34 @@ int main(void)
 	x = 0;
 	f = (t_fill*)malloc(sizeof(t_fill));
 	fd = open("test", O_RDWR| O_TRUNC);
-	fd1 = open("mapmy", O_RDWR);
-//	fd1 = 0;
+//	fd1 = open("mapmy", O_RDWR);
+	fd1 = 0;
 	if (get_next_line(fd1, &line) >= 0 && !ft_strncmp("$$$ exec p", line, 10))
+	{
 		ft_init_players(f, line);
+		free(line);
+	}
 	if (get_next_line(fd1, &line) >= 0 && !ft_strncmp("Plateau ", line, 8))
+	{
 		ft_createmap(f, line);
+		free(line);
+	}
 	if (get_next_line(fd1, &line) >= 0)
 	{
+		free(line);
 		while (get_next_line(fd1, &line) >= 0)
 		{
 			if (!ft_strncmp("Plateau ", line, 8))
 			{
+				free(line);
 				get_next_line(fd1, &line);
+				free(line);
 				get_next_line(fd1, &line);
 			}
 			if (x < f->x)
 			{
 				ft_first_initmap(fd, x, f, line);
+				free(line);
 //				ft_fdprintf(fd, "%s\n", line);
 				x++;
 			}
@@ -75,6 +69,7 @@ int main(void)
 				r = f->p_x;
 				while (i < r)
 				{
+					free(line);
 					(get_next_line(fd1, &line));
 					if (i > 0 && !ft_strchr(line, '*') && ii != 0)
 						f->p_x = i;
@@ -86,7 +81,9 @@ int main(void)
 						ii++;
 					}
 					i++;
+//					free(line);
 				}
+				free(line);
 				ft_cut_columns_piece(fd, f);
 //				ft_printpiece(fd, f);
 //				ft_fdprintf(fd, "X%d\n", f->p_x);
@@ -95,14 +92,18 @@ int main(void)
 				{
 //					ft_printpiece(fd, f);
 					ft_obnul_piece(f);
+//					ft_free_piece(f);
 					break ;
 				}
 				ft_obnul_piece(f);
+//				ft_free_piece(f);
 				x = 0;
 			}
 		}
 	}
+//	free (line);
 	ft_printmap(fd, f);
-	system("leaks -q dpiven.filler");
+	ft_free_map(f);
+	system("leaks -q dpiven.filler > leaks");
 	return (0);
 }
