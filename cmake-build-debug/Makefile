@@ -150,6 +150,33 @@ filler.c.s:
 	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/filler.c.s
 .PHONY : filler.c.s
 
+ft_candidate.o: ft_candidate.c.o
+
+.PHONY : ft_candidate.o
+
+# target to build an object file
+ft_candidate.c.o:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_candidate.c.o
+.PHONY : ft_candidate.c.o
+
+ft_candidate.i: ft_candidate.c.i
+
+.PHONY : ft_candidate.i
+
+# target to preprocess a source file
+ft_candidate.c.i:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_candidate.c.i
+.PHONY : ft_candidate.c.i
+
+ft_candidate.s: ft_candidate.c.s
+
+.PHONY : ft_candidate.s
+
+# target to generate assembly for a file
+ft_candidate.c.s:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_candidate.c.s
+.PHONY : ft_candidate.c.s
+
 ft_createmap.o: ft_createmap.c.o
 
 .PHONY : ft_createmap.o
@@ -230,6 +257,33 @@ ft_init_players.s: ft_init_players.c.s
 ft_init_players.c.s:
 	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_init_players.c.s
 .PHONY : ft_init_players.c.s
+
+ft_malloc.o: ft_malloc.c.o
+
+.PHONY : ft_malloc.o
+
+# target to build an object file
+ft_malloc.c.o:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_malloc.c.o
+.PHONY : ft_malloc.c.o
+
+ft_malloc.i: ft_malloc.c.i
+
+.PHONY : ft_malloc.i
+
+# target to preprocess a source file
+ft_malloc.c.i:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_malloc.c.i
+.PHONY : ft_malloc.c.i
+
+ft_malloc.s: ft_malloc.c.s
+
+.PHONY : ft_malloc.s
+
+# target to generate assembly for a file
+ft_malloc.c.s:
+	$(MAKE) -f CMakeFiles/dpiven.filler.dir/build.make CMakeFiles/dpiven.filler.dir/ft_malloc.c.s
+.PHONY : ft_malloc.c.s
 
 ft_nbr_modul.o: ft_nbr_modul.c.o
 
@@ -2646,6 +2700,9 @@ help:
 	@echo "... filler.o"
 	@echo "... filler.i"
 	@echo "... filler.s"
+	@echo "... ft_candidate.o"
+	@echo "... ft_candidate.i"
+	@echo "... ft_candidate.s"
 	@echo "... ft_createmap.o"
 	@echo "... ft_createmap.i"
 	@echo "... ft_createmap.s"
@@ -2655,6 +2712,9 @@ help:
 	@echo "... ft_init_players.o"
 	@echo "... ft_init_players.i"
 	@echo "... ft_init_players.s"
+	@echo "... ft_malloc.o"
+	@echo "... ft_malloc.i"
+	@echo "... ft_malloc.s"
 	@echo "... ft_nbr_modul.o"
 	@echo "... ft_nbr_modul.i"
 	@echo "... ft_nbr_modul.s"

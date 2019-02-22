@@ -92,6 +92,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/dpiven.filler.dir/ft_place_piece.c.o"
   "CMakeFiles/dpiven.filler.dir/ft_print_filler.c.o"
   "CMakeFiles/dpiven.filler.dir/ft_free.c.o"
+  "CMakeFiles/dpiven.filler.dir/ft_malloc.c.o"
+  "CMakeFiles/dpiven.filler.dir/ft_candidate.c.o"
   "dpiven.filler.pdb"
   "dpiven.filler"
 )

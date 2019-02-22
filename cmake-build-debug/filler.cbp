@@ -83,6 +83,9 @@
 		<Unit filename="/Users/dpiven/CLionProjects/filler/filler.c">
 			<Option target="dpiven.filler"/>
 		</Unit>
+		<Unit filename="/Users/dpiven/CLionProjects/filler/ft_candidate.c">
+			<Option target="dpiven.filler"/>
+		</Unit>
 		<Unit filename="/Users/dpiven/CLionProjects/filler/ft_createmap.c">
 			<Option target="dpiven.filler"/>
 		</Unit>
@@ -90,6 +93,9 @@
 			<Option target="dpiven.filler"/>
 		</Unit>
 		<Unit filename="/Users/dpiven/CLionProjects/filler/ft_init_players.c">
+			<Option target="dpiven.filler"/>
+		</Unit>
+		<Unit filename="/Users/dpiven/CLionProjects/filler/ft_malloc.c">
 			<Option target="dpiven.filler"/>
 		</Unit>
 		<Unit filename="/Users/dpiven/CLionProjects/filler/ft_nbr_modul.c">

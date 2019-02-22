@@ -24,7 +24,7 @@ int	ft_printmap(int fd, t_fill *f)
 		y = 0;
 		while (y < f->y)
 		{
-			ft_fdprintf(fd, "%3d ", f->map[x][y]);
+			ft_fdprintf(fd, "%3d ", f->mp[x][y]);
 			y++;
 		}
 		ft_fdprintf(fd, "\n");

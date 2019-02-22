@@ -12,7 +12,7 @@
 
 NAME = dpiven.filler
 
-SRC = main.c ft_createmap.c ft_init_players.c ft_nbr_modul.c ft_place_piece.c ft_print_filler.c ft_free.c
+SRC = main.c ft_createmap.c ft_init_players.c ft_nbr_modul.c ft_place_piece.c ft_print_filler.c ft_free.c ft_malloc.c ft_candidate.c filler.c
 
 LIB = @make -C libft/
 

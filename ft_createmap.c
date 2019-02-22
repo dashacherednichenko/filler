@@ -23,18 +23,15 @@ int	ft_first_initmap(int x, t_fill *f, char *line)
 	while (y < f->y)
 	{
 		if (line[i] == '.')
-			f->map[x][y] = 0;
+			f->mp[x][y] = 0;
 		else if (line[i] == f->pl || line[i] == f->pl + 32)
-		{
-			f->map[x][y] = -20;
-		}
+			f->mp[x][y] = -20;
 		else if (line[i] == f->en || line[i] == f->en + 32)
-		{
-			f->map[x][y] = -10;
-		}
+			f->mp[x][y] = -10;
 		y++;
 		i++;
 	}
+	free(line);
 	return (0);
 }
 
@@ -49,7 +46,7 @@ int	ft_initmap(t_fill *f)
 		y = 0;
 		while (y < f->y)
 		{
-			if (f->map[x][y] == -10)
+			if (f->mp[x][y] == -10)
 				ft_calc_distance(x, y, f);
 			y++;
 		}
@@ -70,48 +67,14 @@ int	ft_calc_distance(int zx, int zy, t_fill *f)
 		y = 0;
 		while (y < f->y)
 		{
-			if (f->map[x][y] != -10 && f->map[x][y] != -20)
+			if (f->mp[x][y] != -10 && f->mp[x][y] != -20)
 			{
 				z = ft_nbr_modul(x, zx) + ft_nbr_modul(y, zy);
-				if (f->map[x][y] == 0 || z < f->map[x][y])
-					f->map[x][y] = z;
+				if (f->mp[x][y] == 0 || z < f->mp[x][y])
+					f->mp[x][y] = z;
 			}
 			y++;
 		}
-		x++;
-	}
-	return (0);
-}
-
-int	ft_createmap(t_fill *f, char *line)
-{
-	int i;
-	int x;
-
-	x = 0;
-	i = 8;
-	f->x = ft_atoi(&line[i]);
-	while (line[i] >= '0' && line[i] <= '9')
-		i++;
-	f->y = ft_atoi(&line[i]);
-	f->map = (int**)malloc(sizeof(int*) * f->x);
-	while (x < f->x)
-	{
-		f->map[x] = (int*)malloc(sizeof(int) * f->y);
-		x++;
-	}
-	return (0);
-}
-
-int	next_createmap(t_fill *f)
-{
-	int x;
-
-	x = 0;
-	f->map = (int**)malloc(sizeof(int*) * f->x);
-	while (x < f->x)
-	{
-		f->map[x] = (int*)malloc(sizeof(int) * f->y);
 		x++;
 	}
 	return (0);

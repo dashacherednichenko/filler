@@ -21,14 +21,14 @@ typedef struct		s_fill
 	char			en;
 	int				x;
 	int				y;
-	int				**map;
+	int				**mp;
 	int				**piece;
 	int				p_x;
 	int				p_y;
 	int				cand_x;
 	int				cand_y;
-	int				cand_dist;
-	int 			p_x_first;
+	int				c_d;
+	int				p_x_first;
 }					t_fill;
 
 int					ft_createmap(t_fill *f, char *line);
@@ -42,10 +42,12 @@ int					ft_second_initmap(int fd, int x, t_fill *f, char *line);
 int					ft_initmap(t_fill *f);
 int					ft_calc_distance(int x, int y, t_fill *f);
 int					ft_nbr_modul(int x, int y);
-int					ft_place_piece(t_fill *f);
+int					ft_place_piece(t_fill *f, int x, int i);
 int					ft_printpiece(int fd, t_fill *f);
 int					ft_printmap(int fd, t_fill *f);
 void				ft_free_map(t_fill *f);
 int					ft_obnul_piece(t_fill *f);
+int					ft_cand(t_fill *f, int x, int y, int d);
+int					ft_filler(char *line, t_fill *f, int x, int i);
 
 #endif

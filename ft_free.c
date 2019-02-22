@@ -20,13 +20,13 @@ void	ft_free_map(t_fill *f)
 	x = 0;
 	while (x < f->x)
 	{
-		free(f->map[x]);
+		free(f->mp[x]);
 		x++;
 	}
-	free(f->map);
+	free(f->mp);
 }
 
-int ft_obnul_piece(t_fill *f)
+int		ft_obnul_piece(t_fill *f)
 {
 	int x;
 
@@ -38,7 +38,7 @@ int ft_obnul_piece(t_fill *f)
 	}
 	f->cand_x = 0;
 	f->cand_y = 0;
-	f->cand_dist = 0;
+	f->c_d = 0;
 	free(f->piece);
 	return (0);
 }
