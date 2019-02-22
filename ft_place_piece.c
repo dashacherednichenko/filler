@@ -158,8 +158,31 @@ int	ft_place_piece(int fd, t_fill *f)
 	{
 		ft_printf("%d %d\n", f->cand_x, f->cand_y);
 		ft_printmap(fd, f);
+		ft_obnul_piece(f);
 		return (1);
 	}
 	ft_printf("0 0\n");
+	ft_obnul_piece(f);
+	return (0);
+}
+
+int	ft_createpiece(t_fill *f, char *line)
+{
+	int i;
+	int x;
+
+	x = 0;
+	i = 6;
+	f->p_x = ft_atoi(&line[i]);
+	f->p_x_first = f->p_x;
+	while (line[i] >= '0' && line[i] <= '9')
+		i++;
+	f->p_y = ft_atoi(&line[i]);
+	f->piece = (int**)malloc(sizeof(int*) * f->p_x);
+	while (x < f->p_x)
+	{
+		f->piece[x] = (int*)malloc(sizeof(int) * f->p_y);
+		x++;
+	}
 	return (0);
 }

@@ -105,21 +105,15 @@ int	ft_createmap(t_fill *f, char *line)
 	return (0);
 }
 
-int	ft_createpiece(t_fill *f, char *line)
+int	next_createmap(t_fill *f)
 {
-	int i;
 	int x;
 
 	x = 0;
-	i = 6;
-	f->p_x = ft_atoi(&line[i]);
-	while (line[i] >= '0' && line[i] <= '9')
-		i++;
-	f->p_y = ft_atoi(&line[i]);
-	f->piece = (int**)malloc(sizeof(int*) * f->p_x);
-	while (x < f->p_x)
+	f->map = (int**)malloc(sizeof(int*) * f->x);
+	while (x < f->x)
 	{
-		f->piece[x] = (int*)malloc(sizeof(int) * f->p_y);
+		f->map[x] = (int*)malloc(sizeof(int) * f->y);
 		x++;
 	}
 	return (0);

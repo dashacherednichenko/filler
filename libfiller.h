@@ -28,11 +28,11 @@ typedef struct		s_fill
 	int				cand_x;
 	int				cand_y;
 	int				cand_dist;
-//	int				cp_x;
-//	int 			cp_y;
+	int 			p_x_first;
 }					t_fill;
 
 int					ft_createmap(t_fill *f, char *line);
+int					next_createmap(t_fill *f);
 int					ft_init_players(t_fill *f, char *line);
 int					ft_first_initmap(int fd, int x, t_fill *f, char *line);
 int					ft_createpiece(t_fill *f, char *line);

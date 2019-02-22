@@ -31,7 +31,7 @@ int ft_obnul_piece(t_fill *f)
 	int x;
 
 	x = 0;
-	while (x < f->p_x)
+	while (x < f->p_x_first)
 	{
 		free(f->piece[x]);
 		x++;

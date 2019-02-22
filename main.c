@@ -16,40 +16,39 @@
 int main(void)
 {
 	int		fd;
-	int		fd1;
 	char	*line;
 	t_fill	*f;
 	int		x;
 	int		i;
 	int		ii;
-	int r;
+	int		r;
+	int 	t;
 
 	x = 0;
+	t = 0;
 	f = (t_fill*)malloc(sizeof(t_fill));
 	fd = open("test", O_RDWR| O_TRUNC);
-//	fd1 = open("mapmy", O_RDWR);
-	fd1 = 0;
-	if (get_next_line(fd1, &line) >= 0 && !ft_strncmp("$$$ exec p", line, 10))
+	if (get_next_line(0, &line) >= 0 && !ft_strncmp("$$$ exec p", line, 10))
 	{
 		ft_init_players(f, line);
 		free(line);
 	}
-	if (get_next_line(fd1, &line) >= 0 && !ft_strncmp("Plateau ", line, 8))
+	if (get_next_line(0, &line) >= 0 && !ft_strncmp("Plateau ", line, 8))
 	{
 		ft_createmap(f, line);
 		free(line);
 	}
-	if (get_next_line(fd1, &line) >= 0)
+	if (get_next_line(0, &line) >= 0)
 	{
 		free(line);
-		while (get_next_line(fd1, &line) >= 0)
+		while (get_next_line(0, &line) >= 0)
 		{
 			if (!ft_strncmp("Plateau ", line, 8))
 			{
 				free(line);
-				get_next_line(fd1, &line);
+				get_next_line(0, &line);
 				free(line);
-				get_next_line(fd1, &line);
+				get_next_line(0, &line);
 			}
 			if (x < f->x)
 			{
@@ -62,15 +61,13 @@ int main(void)
 			{
 				ft_initmap(fd, f);
 				ft_createpiece(f, line);
-//				ft_fdprintf(fd, "X%d\n", f->p_x);
-//				ft_fdprintf(fd, "Y%d\n", f->p_y);
 				i = 0;
 				ii = 0;
 				r = f->p_x;
 				while (i < r)
 				{
 					free(line);
-					(get_next_line(fd1, &line));
+					get_next_line(0, &line);
 					if (i > 0 && !ft_strchr(line, '*') && ii != 0)
 						f->p_x = i;
 					else if (!ft_strchr(line, '*') && ii == 0)
@@ -81,29 +78,23 @@ int main(void)
 						ii++;
 					}
 					i++;
-//					free(line);
 				}
 				free(line);
 				ft_cut_columns_piece(fd, f);
-//				ft_printpiece(fd, f);
-//				ft_fdprintf(fd, "X%d\n", f->p_x);
-//				ft_fdprintf(fd, "Y%d\n", f->p_y);
+				ft_printpiece(fd, f);
 				if (ft_place_piece(fd, f) == 0)
 				{
-//					ft_printpiece(fd, f);
-					ft_obnul_piece(f);
-//					ft_free_piece(f);
+
 					break ;
 				}
-				ft_obnul_piece(f);
-//				ft_free_piece(f);
+//				ft_obnul_piece(f);
 				x = 0;
 			}
 		}
 	}
-//	free (line);
 	ft_printmap(fd, f);
 	ft_free_map(f);
+	free (f);
 	system("leaks -q dpiven.filler > leaks");
 	return (0);
 }
